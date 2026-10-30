@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Un mensaje para ti ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background: linear-gradient(135deg, #160b15, #3b142d, #180d20);
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.hearts {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.heart {
+    position: absolute;
+    bottom: -30px;
+    animation: float 9s linear infinite;
+    opacity: .5;
+    color: #ff83b5;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    20% { opacity: .6; }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+main {
+    position: relative;
+    z-index: 1;
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 45px 20px;
+    text-align: center;
+}
+
+.card {
+    width: 100%;
+    max-width: 750px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 25px;
+    padding: 40px 30px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 15px 50px rgba(0,0,0,.3);
+    animation: appear 1.2s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo para las fotos integradas */
+.photo-container {
+    margin: 25px 0;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 180, 210, 0.3);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+.photo-container img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.photo-container img:hover {
+    transform: scale(1.02);
+}
+
+h1 {
+    font-size: clamp(30px, 6vw, 48px);
+    color: #ffb4d2;
+    margin-bottom: 25px;
+}
+
+h2 {
+    font-size: clamp(26px, 5vw, 38px);
+    color: #ffb4d2;
+    margin-bottom: 25px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.9;
+    margin-bottom: 20px;
+    color: #f9e9f1;
+}
+
+.highlight {
+    color: #ff9fc5;
+    font-weight: bold;
+}
+
+button {
+    background: linear-gradient(135deg, #e85d94, #a83268);
+    border: none;
+    padding: 15px 28px;
+    color: white;
+    font-size: 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 10px;
+    transition: .3s;
+    box-shadow: 0 5px 20px rgba(232,93,148,.2);
+}
+
+button:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 8px 25px rgba(232,93,148,.4);
+}
+
+.secondary {
+    background: rgba(255,255,255,.1);
+    border: 1px solid #ff9fc5;
+}
+
+.hidden-message {
+    display: none;
+    margin-top: 25px;
+    padding: 20px;
+    background: rgba(255,159,197,.1);
+    border-radius: 15px;
+    animation: appear .7s ease;
+}
+
+.quote {
+    font-size: clamp(23px, 4vw, 32px);
+    color: #ffb4d2;
+    font-style: italic;
+    line-height: 1.7;
+    margin: 30px 0;
+}
+
+.small {
+    color: #dcb6c9;
+    font-size: 14px;
+}
+
+.final {
+    background: linear-gradient(135deg, #47172f, #190d20);
+}
+
+.final h1 {
+    font-size: clamp(35px, 7vw, 55px);
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #cdaabd;
+    position: relative;
+    z-index: 1;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hearts" id="hearts"></div>
+
+<main>
+
+<!-- INICIO -->
+<section id="inicio">
+    <div class="card">
+        <p class="small">❤️ UNA CARTITA PARA TI ❤️</p>
+
+        <h1>Hola, mi amor, mi vida, mi niña...</h1>
+
+        <div class="photo-container">
+            <img src="foto1.jpeg" alt="Nuestro momento especial">
+        </div>
+
+        <p>
+            ¿Cómo has estado?
+        </p>
+
+        <p>
+            La verdad he querido decirte muchas cosas respecto a tu decisión,
+            pero antes quiero que veas lo que tengo que decirte.
+        </p>
+
+        <div class="photo-container">
+            <img src="foto2.jpeg" alt="Nosotros">
+        </div>
+
+        <p>
+            No sé si estas palabras logren expresar todo lo que llevo dentro,
+            pero quiero que sepas que cada una de ellas sale de lo más sincero
+            de mi corazón.
+        </p>
+
+        <p>
+            Así que te pido que leas esto con tranquilidad.
+            No quiero que lo veas como una obligación,
+            simplemente quiero compartir contigo lo que siento.
+        </p>
+
+        <button onclick="goTo('capitulo1')">
+            Quiero leerte ❤️
+        </button>
+    </div>
+</section>
+
+<!-- CAPITULO 1 -->
+<section id="capitulo1">
+    <div class="card">
+        <h2>El amor más bonito... 🌷</h2>
+
+        <div class="photo-container">
+            <img src="foto3.jpeg" alt="Momento hermoso">
+        </div>
+
+        <p>
+            Quiero que sepas que desde que llegaste a mi vida,
+            muchas cosas cambiaron.
+        </p>
+
+        <p>
+            No estaba buscando encontrar algo así,
+            y mucho menos imaginaba que una persona pudiera hacerme
+            sentir tantas cosas bonitas en tan poco tiempo.
+        </p>
+
+        <div class="photo-container">
+            <img src="foto4.jpeg" alt="Juntitos">
+        </div>
+
+        <p>
+            Pero llegaste tú, con tu manera de ser, tu sonrisa,
+            tus ocurrencias y todas esas pequeñas cosas que quizás
+            para ti son normales, pero que para mí significan muchísimo.
+        </p>
+
+        <p>
+            Me hiciste descubrir un amor que se siente diferente,
+            uno que me inspira a ser mejor persona,
+            a querer compartir mis días y a imaginar cosas bonitas.
+        </p>
+
+        <p class="highlight">
+            Eres uno de los amores más bonitos que he encontrado en mi vida.
+        </p>
+
+        <button onclick="goTo('capitulo2')">
+            Hay algo más que quiero decirte ❤️
+        </button>
+    </div>
+</section>
+
+<!-- CAPITULO 2 -->
+<section id="capitulo2">
+    <div class="card">
+        <h2>Sobre el pasado y nosotros... 🦋</h2>
+
+        <div class="photo-container">
+            <img src="foto5.jpeg" alt="Nuestros detalles">
+        </div>
+
+        <p>
+            Sé que todos tenemos una historia antes de conocernos.
+            Todos hemos vivido cosas, cometido errores,
+            tenido experiencias y aprendido de ellas.
+        </p>
+
+        <p>
+            Pero yo no quiero vivir mirando hacia atrás.
+            No quiero que las cosas que pasaron antes tengan
+            más importancia que lo que podemos construir ahora.
+        </p>
+
+        <div class="photo-container">
+            <img src="foto6.jpeg" alt="Recuerdos juntos">
+        </div>
+
+        <p>
+            No quiero competir con tu pasado ni cambiarlo.
+            Tampoco quiero que sientas que tienes que olvidar
+            quién fuiste para poder estar conmigo.
+        </p>
+
+        <p>
+            Solamente quiero que podamos escribir una historia
+            diferente, una en la que los dos podamos estar tranquilos,
+            ser felices y sentirnos queridos.
+        </p>
+
+        <div class="quote">
+            "El pasado en el pasado,
+            nuestro presente somos nosotros
+            y nuestro futuro va a ser juntos."
+        </div>
+
+        <p>
+            Esa es mi frase, y de verdad quiero que algún día
+            podamos demostrar que no son solamente palabras.
+        </p>
+
+        <button onclick="goTo('capitulo3')">
+            Quiero que sepas algo más...
+        </button>
+    </div>
+</section>
+
+<!-- CAPITULO 3 -->
+<section id="capitulo3">
+    <div class="card">
+        <h2>No quiero algo a medias... 💗</h2>
+
+        <div class="photo-container">
+            <img src="foto7.jpeg" alt="Tomados de la mano">
+        </div>
+
+        <p>
+            Yo no quiero que estemos juntos por presión,
+            por compromiso o por miedo a perder al otro.
+        </p>
+
+        <p>
+            Quiero que si estamos juntos sea porque ambos lo queremos,
+            porque nos sentimos bien, porque podemos hablar de todo
+            y porque sabemos que podemos contar el uno con el otro.
+        </p>
+
+        <div class="photo-container">
+            <img src="foto8.jpeg" alt="Momentos felices">
+        </div>
+
+        <p>
+            Quiero aprender de ti y que tú también puedas aprender de mí.
+            Quiero que podamos equivocarnos, hablar, solucionar las cosas
+            y crecer sin lastimarnos.
+        </p>
+
+        <p>
+            No espero que todo sea perfecto.
+            Sé que habrá días difíciles, pero me gustaría que
+            pudiéramos enfrentarlos como un equipo.
+        </p>
+
+        <p class="highlight">
+            No busco una historia perfecta, quiero una historia real contigo.
+        </p>
+
+        <button onclick="showMessage()">
+            Hay algo que quiero que descubras 💌
+        </button>
+
+        <div class="hidden-message" id="secret">
+            <p>
+                Si pudiera volver al día en que te conocí,
+                volvería a elegir conocerte.
+                Porque incluso con todo lo que implica querer a alguien,
+                no cambiaría la oportunidad de haberte encontrado.
+            </p>
+            <p class="highlight">
+                Gracias por llegar a mi vida, mi niña. ❤️
+            </p>
+        </div>
+
+        <button onclick="goTo('final')" class="secondary">
+            Leer lo último...
+        </button>
+    </div>
+</section>
+
+<!-- FINAL -->
+<section id="final" class="final">
+    <div class="card">
+        <p class="small">Y AHORA QUIERO QUE LEAS ESTO...</p>
+
+        <h1>Te voy a seguir amando. ❤️</h1>
+
+        <div class="photo-container">
+            <img src="foto9.jpeg" alt="Te amo">
+        </div>
+
+        <p>
+            Quiero que entiendas algo, mi amor:
+            independientemente de la decisión que tomes,
+            de si necesitas tiempo o de si consideras que
+            lo mejor es que empecemos siendo amigos para
+            hacer las cosas bien, mis sentimientos por ti
+            no desaparecen de un día para otro.
+        </p>
+
+        <p>
+            Te voy a seguir queriendo, te voy a seguir viendo
+            como esa persona tan especial que llegó a mi vida
+            y a la que le tengo un cariño inmenso.
+        </p>
+
+        <p>
+            Si ser amigos es lo que necesitamos para conocernos
+            mejor, sanar algunas cosas, entendernos y hacer que
+            esto pueda funcionar de una manera bonita y sana,
+            quiero respetarlo.
+        </p>
+
+        <p>
+            No quiero apresurarte, no quiero que sientas presión
+            y tampoco quiero que estés conmigo por compromiso.
+            Quiero que seas feliz y que puedas sentirte segura
+            de lo que quieres.
+        </p>
+
+        <p>
+            Pero tampoco quiero esconderte lo que siento:
+            <span class="highlight">
+                yo sí quiero que esto funcione.
+            </span>
+        </p>
+
+        <p>
+            Quiero que tengamos la oportunidad de construir algo
+            bonito, de volvernos a elegir, de compartir momentos,
+            risas, abrazos, días buenos y también los complicados.
+        </p>
+
+        <p>
+            Y si la vida nos permite llegar a ese futuro que tanto
+            me gusta imaginar, quiero que sea contigo.
+        </p>
+
+        <div class="quote">
+            "No importa cómo tengamos que empezar,
+            lo que me gustaría es que algún día
+            podamos decir que valió la pena."
+        </div>
+
+        <h2>Te quiero muchísimo, mi niña. ❤️</h2>
+
+        <p>
+            Gracias por ser parte de mi vida.
+            Y recuerda que, para mí, sigues siendo
+            alguien muy especial.
+        </p>
+
+        <p class="highlight">
+            Con todo mi cariño, para ti. ❤️
+        </p>
+
+        <button onclick="goTo('inicio')">
+            Volver a leer desde el principio ↺
+        </button>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    Hecho con mucho cariño, solamente para ti. ❤️
+</footer>
+
+<script>
+// Crear corazones flotantes
+const heartContainer = document.getElementById("hearts");
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "♥";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random() * 25) + "px";
+    heart.style.animationDuration = (5 + Math.random() * 7) + "s";
+
+    heartContainer.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 12000);
+}
+
+setInterval(createHeart, 450);
+
+// Navegación entre capítulos
+function goTo(id) {
+    document.getElementById(id).scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+// Mensaje secreto
+function showMessage() {
+    const message = document.getElementById("secret");
+
+    if (message.style.display === "block") {
+        message.style.display = "none";
+    } else {
+        message.style.display = "block";
+    }
+}
+</script>
+
+</body>
+</html>
